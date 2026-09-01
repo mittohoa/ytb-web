@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulseboard — Theo dõi hiệu suất kênh YouTube</title>
+<meta name="description" content="Ứng dụng cá nhân giúp chủ kênh YouTube theo dõi hiệu suất video, chẩn đoán vấn đề và nhận cảnh báo theo ngưỡng tự đặt.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="./">Pulseboard</a>
+    <nav class="site">
+      <a href="./privacy.html">Quyền riêng tư</a>
+      <a href="./terms.html">Điều khoản</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Pulseboard</h1>
+  <p class="lead">
+    Ứng dụng cá nhân giúp chủ kênh YouTube theo dõi hiệu suất video, chẩn đoán
+    nguyên nhân khi video chạy kém, và nhận cảnh báo theo ngưỡng do chính mình đặt.
+  </p>
+
+  <div class="notice">
+    <p>
+      Đây là <strong>công cụ cá nhân</strong>, không phải sản phẩm thương mại.
+      Ứng dụng chỉ đọc dữ liệu của chính kênh mà người dùng cấp quyền, và chỉ
+      hiển thị lại cho người đó.
+    </p>
+  </div>
+
+  <h2>Ứng dụng làm gì</h2>
+
+  <h3>Nhịp 48 giờ đầu</h3>
+  <p>
+    YouTube Studio cho biết video đạt bao nhiêu lượt xem, nhưng không cho biết
+    con số đó là tốt hay tệ. Ứng dụng chụp lại số liệu công khai theo chu kỳ để
+    dựng đường cong riêng, rồi đặt video mới cạnh khoảng thường gặp của chính
+    kênh ở cùng độ tuổi — trả lời được câu <em>"video này đang chạy nhanh hơn
+    hay chậm hơn bình thường"</em>.
+  </p>
+
+  <h3>Chẩn đoán CTR và thời lượng xem</h3>
+  <p>
+    Đối chiếu tỷ lệ nhấp với thời lượng xem trung bình để phân loại vấn đề:
+    lỗi ở thumbnail và tiêu đề, lỗi ở phần mở đầu, hay sai chủ đề. Mỗi nhóm đi
+    kèm một việc cụ thể cần làm.
+  </p>
+
+  <h3>Phân loại nội dung tự đặt</h3>
+  <p>
+    Người dùng tự gắn nhãn chủ đề, format hoặc series cho video, rồi so hiệu
+    suất theo nhãn. Đây là thông tin YouTube không có, vì chỉ chủ kênh mới biết
+    video của mình thuộc tuyến nội dung nào.
+  </p>
+
+  <h3>Ngưỡng cảnh báo của riêng mình</h3>
+  <p>
+    Mỗi kênh một nhịp khác nhau. Người dùng tự đặt mức nào là "đang bùng", mức
+    nào là "đang nguội", chờ bao lâu trước khi kết luận, và bật tắt từng loại
+    cảnh báo. Có thể gắn cờ theo dõi riêng cho một video kèm mục tiêu và hạn chót.
+  </p>
+
+  <h2>Dữ liệu lấy từ đâu</h2>
+  <p>
+    Ứng dụng dùng hai API chính thức của Google, đều ở chế độ <strong>chỉ
+    đọc</strong>:
+  </p>
+  <ul>
+    <li><strong>YouTube Data API v3</strong> — thông tin công khai của video
+      (tiêu đề, thời lượng, số lượt xem, lượt thích, bình luận).</li>
+    <li><strong>YouTube Analytics API</strong> — số liệu riêng của chủ kênh
+      (thời gian xem, tỷ lệ nhấp, tỷ lệ giữ chân, nguồn truy cập). Chỉ truy cập
+      được sau khi chủ kênh tự cấp quyền, và chỉ với kênh của chính họ.</li>
+  </ul>
+  <p>
+    Ứng dụng <strong>không</strong> đăng bài, không sửa, không xoá bất cứ thứ gì
+    trên kênh. Không có quyền ghi.
+  </p>
+
+  <h2>Quyền riêng tư</h2>
+  <p>
+    Dữ liệu chỉ được dùng để hiển thị lại cho chính người đã cấp quyền. Không
+    chia sẻ, không bán, không dùng cho quảng cáo, không huấn luyện mô hình.
+    Chi tiết ở <a href="./privacy.html">chính sách quyền riêng tư</a>.
+  </p>
+
+  <h2>Thu hồi quyền truy cập</h2>
+  <p>
+    Có thể thu hồi bất cứ lúc nào tại
+    <a href="https://myaccount.google.com/permissions" rel="noopener">
+      myaccount.google.com/permissions</a>.
+    Sau khi thu hồi, ứng dụng không đọc thêm được dữ liệu mới.
+  </p>
+
+  <footer class="site">
+    <p>
+      Pulseboard là dự án cá nhân, <strong>không liên kết, không được tài trợ
+      hay xác nhận</strong> bởi YouTube hoặc Google LLC. YouTube là thương hiệu
+      của Google LLC.
+    </p>
+    <p>
+      <a href="./privacy.html">Quyền riêng tư</a> ·
+      <a href="./terms.html">Điều khoản sử dụng</a>
+    </p>
+  </footer>
+</main>
+
+</body>
+</html>

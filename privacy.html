@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chính sách quyền riêng tư — Pulseboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="./">Pulseboard</a>
+    <nav class="site">
+      <a href="./privacy.html">Quyền riêng tư</a>
+      <a href="./terms.html">Điều khoản</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Chính sách quyền riêng tư</h1>
+  <p class="meta">Cập nhật: 01/09/2026</p>
+
+  <p class="lead">
+    Pulseboard là công cụ cá nhân giúp chủ kênh YouTube xem lại số liệu của
+    chính kênh mình. Ứng dụng không phục vụ người dùng đại chúng, không có
+    quảng cáo, và không chia sẻ dữ liệu với bất kỳ ai.
+  </p>
+
+  <h2>1. Dữ liệu ứng dụng truy cập</h2>
+  <p>Sau khi bạn cấp quyền, ứng dụng đọc các dữ liệu sau qua API của Google:</p>
+
+  <table>
+    <thead>
+      <tr><th>Phạm vi quyền</th><th>Dữ liệu đọc</th><th>Dùng để làm gì</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>youtube.readonly</code></td>
+        <td>Danh sách video, tiêu đề, mô tả, ngày đăng, thời lượng, ảnh thu nhỏ,
+            số lượt xem/thích/bình luận công khai, thông tin kênh</td>
+        <td>Hiển thị danh sách video và dựng đường cong lượt xem theo thời gian</td>
+      </tr>
+      <tr>
+        <td><code>yt-analytics.readonly</code></td>
+        <td>Thời gian xem, thời lượng xem trung bình, số lần hiển thị, tỷ lệ nhấp,
+            tỷ lệ giữ chân người xem, nguồn truy cập, số người đăng ký tăng/giảm</td>
+        <td>Chẩn đoán hiệu suất và dựng báo cáo</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Cả hai phạm vi đều là <strong>chỉ đọc</strong>. Ứng dụng không đăng, không
+    sửa, không xoá bất cứ nội dung nào trên kênh của bạn.
+  </p>
+
+  <div class="card">
+    <p>
+      <strong>Ứng dụng không thu thập:</strong> danh bạ, email, vị trí, dữ liệu
+      duyệt web, thông tin thiết bị, dữ liệu của bất kỳ kênh nào bạn không sở hữu,
+      hay thông tin cá nhân của người xem kênh bạn.
+    </p>
+  </div>
+
+  <h2>2. Dữ liệu được lưu ở đâu</h2>
+  <p>
+    Số liệu được lưu trong một cơ sở dữ liệu PostgreSQL riêng do Supabase vận
+    hành, chỉ tài khoản của bạn truy cập được. Mã làm mới quyền truy cập
+    (refresh token) của Google được lưu trong bảng có bật Row Level Security và
+    <strong>không có chính sách đọc nào</strong> — nghĩa là ứng dụng phía điện
+    thoại không đọc được, chỉ tiến trình nền phía máy chủ mới dùng đến.
+  </p>
+
+  <h2>3. Chia sẻ dữ liệu</h2>
+  <p>
+    <strong>Không chia sẻ với bất kỳ bên thứ ba nào.</strong> Không bán, không
+    trao đổi, không dùng cho quảng cáo, không dùng để huấn luyện mô hình học máy,
+    không gửi sang dịch vụ phân tích nào khác.
+  </p>
+
+  <h2>4. Thời gian lưu giữ</h2>
+  <ul>
+    <li>Số liệu tổng hợp theo ngày: giữ đến khi bạn xoá.</li>
+    <li>Ảnh chụp lượt xem theo chu kỳ: giữ 120 ngày, riêng 48 giờ đầu của mỗi
+        video được giữ lâu dài vì đó là nền so sánh cho video sau.</li>
+    <li>Mã làm mới quyền truy cập: xoá ngay khi bạn thu hồi quyền hoặc yêu cầu
+        xoá tài khoản.</li>
+  </ul>
+
+  <h2>5. Thu hồi quyền và xoá dữ liệu</h2>
+  <p>
+    Thu hồi quyền bất cứ lúc nào tại
+    <a href="https://myaccount.google.com/permissions" rel="noopener">
+      myaccount.google.com/permissions</a>.
+    Sau khi thu hồi, ứng dụng không đọc thêm được dữ liệu mới.
+  </p>
+  <p>
+    Muốn xoá toàn bộ dữ liệu đã lưu, liên hệ theo địa chỉ ở mục 8. Dữ liệu sẽ
+    được xoá trong vòng 30 ngày.
+  </p>
+
+  <h2>6. Tuân thủ chính sách của Google</h2>
+  <div class="notice">
+    <p>
+      Việc sử dụng thông tin nhận được từ API của Google của Pulseboard tuân thủ
+      <a href="https://developers.google.com/terms/api-services-user-data-policy"
+         rel="noopener">Chính sách dữ liệu người dùng dịch vụ API của Google</a>,
+      bao gồm các yêu cầu về Sử dụng giới hạn (Limited Use).
+    </p>
+  </div>
+
+  <h2>7. Thay đổi chính sách</h2>
+  <p>
+    Nếu có thay đổi, ngày cập nhật ở đầu trang sẽ được sửa lại. Ứng dụng sẽ
+    không mở rộng phạm vi dữ liệu thu thập mà không yêu cầu bạn cấp quyền lại.
+  </p>
+
+  <h2>8. Liên hệ</h2>
+  <p>
+    Email: <a href="mailto:hoaduong.hutech@gmail.com">hoaduong.hutech@gmail.com</a>
+  </p>
+
+  <footer class="site">
+    <p>
+      Pulseboard là dự án cá nhân, <strong>không liên kết, không được tài trợ
+      hay xác nhận</strong> bởi YouTube hoặc Google LLC.
+    </p>
+    <p><a href="./">Trang chủ</a> · <a href="./terms.html">Điều khoản sử dụng</a></p>
+  </footer>
+
+  <hr style="border:0;border-top:1px solid var(--border);margin:3rem 0 2rem">
+
+  <h2 id="en">Privacy Policy (English)</h2>
+  <p class="meta">Last updated: 1 September 2026</p>
+
+  <p>
+    Pulseboard is a personal tool that lets a YouTube channel owner review
+    analytics for their own channel. It is not a consumer product, shows no
+    advertising, and shares data with no one.
+  </p>
+
+  <h3>Data accessed</h3>
+  <p>
+    With your consent, the app reads — <strong>read-only</strong> — via
+    <code>youtube.readonly</code>: your video list, titles, descriptions,
+    publish dates, durations, thumbnails, public view/like/comment counts and
+    channel details; and via <code>yt-analytics.readonly</code>: watch time,
+    average view duration, impressions, click-through rate, audience retention,
+    traffic sources and subscriber changes. The app never posts, edits or
+    deletes anything on your channel.
+  </p>
+
+  <h3>Storage and sharing</h3>
+  <p>
+    Data is stored in a private PostgreSQL database operated by Supabase and is
+    accessible only to your account. Google refresh tokens are held in a table
+    with Row Level Security enabled and no read policy, so they are unreadable
+    from the mobile client. Data is <strong>never</strong> sold, shared with
+    third parties, used for advertising, or used to train machine-learning
+    models.
+  </p>
+
+  <h3>Retention and deletion</h3>
+  <p>
+    Daily aggregates are kept until you delete them. Periodic view snapshots are
+    kept for 120 days, except the first 48 hours after each video is published,
+    which are retained long-term as the comparison baseline. Refresh tokens are
+    deleted as soon as you revoke access or request deletion. Revoke access at
+    any time at
+    <a href="https://myaccount.google.com/permissions" rel="noopener">
+      myaccount.google.com/permissions</a>.
+    To request deletion of stored data, email <a href="mailto:hoaduong.hutech@gmail.com">hoaduong.hutech@gmail.com</a>; data is
+    removed within 30 days.
+  </p>
+
+  <h3>Limited Use</h3>
+  <p>
+    Pulseboard's use of information received from Google APIs adheres to the
+    <a href="https://developers.google.com/terms/api-services-user-data-policy"
+       rel="noopener">Google API Services User Data Policy</a>, including the
+    Limited Use requirements.
+  </p>
+</main>
+
+</body>
+</html>
