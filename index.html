@@ -34,6 +34,41 @@
     </p>
   </div>
 
+  <h2>Tải ứng dụng</h2>
+
+  <div class="download">
+    <p>
+      Ứng dụng không lên CH Play vì đây là công cụ cá nhân. Tải thẳng file cài
+      đặt cho Android:
+    </p>
+
+    <a class="btn" id="dl"
+       href="https://github.com/mittohoa/ytb-web/releases/latest/download/pulseboard.apk">
+      Tải cho Android</a>
+
+    <p class="meta" id="ver">
+      Android 6.0 trở lên ·
+      <a href="https://github.com/mittohoa/ytb-web/releases" rel="noopener">xem
+        tất cả phiên bản</a>
+    </p>
+
+    <p><strong>Lần đầu cài đặt</strong></p>
+    <ol class="steps">
+      <li>Mở file vừa tải về.</li>
+      <li>
+        Android sẽ báo <em>"không được phép cài ứng dụng không rõ nguồn gốc"</em>
+        — đây là màn hình của hệ điều hành, không phải lỗi. Bấm
+        <strong>Cài đặt</strong> rồi bật quyền cho ứng dụng đang mở file.
+      </li>
+      <li>Quay lại và bấm cài. Các lần sau không hỏi nữa.</li>
+    </ol>
+
+    <p class="meta" style="margin-top:1.25rem">
+      Từ lần sau ứng dụng tự kiểm tra bản mới mỗi khi mở, tải ngầm và hỏi trước
+      khi cài — không cần quay lại trang này.
+    </p>
+  </div>
+
   <h2>Ứng dụng làm gì</h2>
 
   <h3>Nhịp 48 giờ đầu</h3>
@@ -110,6 +145,20 @@
     </p>
   </footer>
 </main>
+
+<script>
+  // Dien so phien ban moi nhat vao dong duoi nut tai. Khong co no thi trang
+  // van dung - nut tai da tro san ve ban moi nhat.
+  fetch('https://api.github.com/repos/mittohoa/ytb-web/releases/latest')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) {
+      if (!j || !j.tag_name) return;
+      var el = document.getElementById('ver');
+      el.insertAdjacentHTML('afterbegin',
+        'Phiên bản ' + j.tag_name.replace(/^v/, '') + ' · ');
+    })
+    .catch(function () {});
+</script>
 
 </body>
 </html>

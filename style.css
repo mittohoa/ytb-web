@@ -169,3 +169,40 @@ footer.site {
 }
 
 footer.site a { color: var(--muted); }
+
+/* --------------------------------------------------------- tải ứng dụng */
+
+.download {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin: 1.75rem 0;
+}
+
+.download p:first-of-type { margin-top: 0; }
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.btn:hover { filter: brightness(1.08); }
+
+.meta {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin: 0 0 1.25rem;
+}
+
+/* Danh sach cac buoc cai dat: so thu tu can doc duoc, khong phai trang tri */
+ol.steps { padding-left: 1.15rem; margin: 0; }
+ol.steps li { margin-bottom: 0.55rem; line-height: 1.65; }
+ol.steps li:last-child { margin-bottom: 0; }
